@@ -14,6 +14,7 @@ if(navClose){
     })
 }
 
+
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav_link');
 
@@ -25,7 +26,15 @@ navLink.forEach(n => n.addEventListener('click', linkWork));
 
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-
+function scrollHeader(){
+    const head = document.getElementById('header');
+    if(this.scrollY >= 100){
+        head.classList.add('scroll-header');
+    } else {
+        head.classList.remove('scroll-header');
+    }
+}
+window.addEventListener('scroll', scrollHeader);
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
