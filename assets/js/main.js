@@ -84,9 +84,27 @@ scrollReveal.reveal(`.home_footer`, {delay: 650});
 scrollReveal.reveal(`.home_img`, {delay: 900, origin: `top`});
 
 
-scrollReveal.reveal(`.sponsor_img`, {origin: `top`, interval: 100});
+scrollReveal.reveal(`.sponsor_img, .products_card, .footer_logo, .footer_content, .copyright`, {origin: `top`, interval: 100});
 scrollReveal.reveal(`.specs_data, .discount_animate`, {origin: `left`, interval: 100});
 scrollReveal.reveal(`.specs_img, .discount_img`, {origin: `right`});
 scrollReveal.reveal(`.case_img`, {origin: `top`});
 scrollReveal.reveal(`.case_data`);
 
+/*============ BUTTON HOVER ANIMATION ============*/
+// let buttons = document.querySelectorAll('.button');
+// buttons.forEach(btn => {
+//     btn.addEventListener('mouseover', function(e){
+//         let x = e.clientX - e.target.offsetLeft;
+//         let y = e.clientY - e.target.offsetTop;
+
+//         let ripples = document.createElement('button::after');
+//         ripples.style.left = x + 'px';
+//         ripples.style.top = y + 'px';
+//         this.appendChild(ripples);
+
+//         setTimeout(() => {
+//             ripples.remove();
+//         }, 1000);
+//     })
+//     let x = e.clientX - e.target.offsetLeft;
+// })
