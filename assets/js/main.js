@@ -39,10 +39,35 @@ function scrollHeader(){
 window.addEventListener('scroll', scrollHeader);
 
 /*=============== SHOW SCROLL UP ===============*/ 
-
+function scrollUp(){
+    const scrollBox = document.getElementById('scrollup');
+    if(this.scrollY >= 200){
+        scrollBox.classList.add('showing');
+    } else {
+        scrollBox.classList.remove('showing');
+    }
+}
+window.addEventListener('scroll', scrollUp);
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const parts = document.querySelectorAll('section[id]');
 
+function activeScroll(){
+    const sY = window.scrollY;
+
+    parts.forEach(current => {
+        const partHeight = current.offsetHeight;
+        const partTop = current.offsetTop - 50;
+        partId = current.getAttribute('id');
+
+        if(sY > partTop && sY <= partTop + partHeight){
+            document.querySelector('.nav_menu a[href*=' + partId + ']').classList.add('active-link');
+        } else {
+            document.querySelector('.nav_menu a[href*=' + partId + ']').classList.remove('active-link');
+        }
+    })
+}
+window.addEventListener('scroll', activeScroll)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
