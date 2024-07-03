@@ -38,6 +38,7 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader);
 
+
 /*=============== SHOW SCROLL UP ===============*/ 
 function scrollUp(){
     const scrollBox = document.getElementById('scrollup');
@@ -48,6 +49,7 @@ function scrollUp(){
     }
 }
 window.addEventListener('scroll', scrollUp);
+
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const parts = document.querySelectorAll('section[id]');
@@ -69,6 +71,22 @@ function activeScroll(){
 }
 window.addEventListener('scroll', activeScroll)
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
 
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const scrollReveal = ScrollReveal({
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+})
+
+scrollReveal.reveal(`.home_head, .section_title`, {delay: 600});
+scrollReveal.reveal(`.home_footer`, {delay: 650});
+scrollReveal.reveal(`.home_img`, {delay: 900, origin: `top`});
+
+
+scrollReveal.reveal(`.sponsor_img`, {origin: `top`, interval: 100});
+scrollReveal.reveal(`.specs_data, .discount_animate`, {origin: `left`, interval: 100});
+scrollReveal.reveal(`.specs_img, .discount_img`, {origin: `right`});
+scrollReveal.reveal(`.case_img`, {origin: `top`});
+scrollReveal.reveal(`.case_data`);
 
